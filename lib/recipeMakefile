@@ -8,4 +8,10 @@ tmprecipe.tex : title.txt description.txt ingredients.txt method.txt $(root)/lib
 	$(root)/lib/generateTex.sh title.txt description.txt ingredients.txt method.txt $(root)/lib/recipeTemplate.tex
 
 clean:
+	# Removes automatically generated files
 	rm -vf tmprecipe.aux tmprecipe.log tmprecipe.out tmprecipe.pdf tmprecipe.tex
+
+allclean:
+	# Removes generated PDF files too
+	rm -vf tmprecipe.aux tmprecipe.log tmprecipe.out tmprecipe.pdf tmprecipe.tex
+	rm -vf *.pdf
