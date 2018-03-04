@@ -4,13 +4,18 @@ SUBDIRS := $(wildcard mains/*/)
 # Each food directory should have its own symlink to the recipeMakefile
 MAKEFILES := $(SUBDIRS:=Makefile)
 
-.PHONY : all clean allclean $(SUBDIRS) $(MAKEFILES)
+.PHONY : all clean allclean makefiles $(SUBDIRS) $(MAKEFILES)
 all : $(SUBDIRS)
 
 # The subdirs target depends on having Makefiles everywhere
 $(SUBDIRS) : $(MAKEFILES)
 	# Recursively call make on each food
 	$(MAKE) -C $@
+
+# This is here so that we can generate the Makefile symlinks without invoking
+# the full build process (in the case that we only want to build a specific
+# recipe
+makefiles : $(MAKEFILES)
 
 $(MAKEFILES) :
 	# if the symlink does not already exist then make it so. Note that the
@@ -29,5 +34,5 @@ allclean :
 	# Makefile symlinks
 	for dir in $(SUBDIRS) ; do \
 		$(MAKE) -C $$dir $@ ;\
-		rm -vi $${dir}Makefile ;\
+		rm -vf $${dir}Makefile ;\
 	done
