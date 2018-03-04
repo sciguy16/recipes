@@ -3,6 +3,7 @@ root = ../..
 
 recipe.pdf : tmprecipe.tex
 	pdflatex tmprecipe.tex
+	mv tmprecipe.pdf recipe.pdf
 
 tmprecipe.tex : title.txt description.txt ingredients.txt method.txt $(root)/lib/recipeTemplate.tex
 	$(root)/lib/generateTex.sh title.txt description.txt ingredients.txt method.txt $(root)/lib/recipeTemplate.tex
