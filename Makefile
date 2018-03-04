@@ -25,14 +25,15 @@ $(MAKEFILES) :
 	# (i.e. "category/food/Makefile")
 	[ -f $@ ] || ln -s ../../lib/recipeMakefile $@
 
-# We don't bother setting up a separate call to clean, although we could as it
-# is implemented in recipeMakefile
-clean : allclean
-
-allclean :
-	# Manually call `make allclean` in each directory and then delete the
-	# Makefile symlinks
+clean :
+	# Manually call `make clean` in each directory
 	for dir in $(SUBDIRS) ; do \
 		$(MAKE) -C $$dir $@ ;\
-		rm -vf $${dir}Makefile ;\
+	done
+
+allclean : clean
+	# Depend on the clean target, then wipe all of the Makefile symlinks and
+	# generated recipe.pdf outputs
+	for dir in $(SUBDIRS) ; do \
+		rm -vf $${dir}recipe.pdf $${dir}Makefile ;\
 	done
