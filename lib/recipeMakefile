@@ -4,6 +4,5 @@ root = ../..
 recipe.pdf : tmprecipe.tex
 	pdflatex tmprecipe.tex
 
-tmprecipe.tex : ingredients.txt method.txt $(root)/lib/recipeTemplate.tex
-	$(root)/lib/generateTex.sh ingredients.txt method.txt $(root)/lib/recipeTemplate.tex \
-		> tmprecipe.tex
+tmprecipe.tex : title.txt description.txt ingredients.txt method.txt $(root)/lib/recipeTemplate.tex
+	$(root)/lib/generateTex.sh title.txt description.txt ingredients.txt method.txt $(root)/lib/recipeTemplate.tex
