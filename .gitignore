@@ -1,1 +1,4 @@
 *.swp
+tmprecipe.*
+mains/*/Makefile
+desserts/*/Makefile
