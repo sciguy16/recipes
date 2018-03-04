@@ -1,4 +1,5 @@
 *.swp
 tmprecipe.*
+recipe.pdf
 mains/*/Makefile
 desserts/*/Makefile
