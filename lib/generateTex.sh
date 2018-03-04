@@ -2,8 +2,8 @@
 
 echo "ENTERING generateTex.sh" >&2
 
-# Arguments are title file, description file, ingredients file, method file, template file
-#cat $1 $2 $3
+# Arguments are title file, description file, ingredients file, method file,
+# and template file
 
 TITLE="$1"
 DESCRIPTION="$2"
