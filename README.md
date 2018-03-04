@@ -25,3 +25,8 @@ There are two supported use cases: building all of the recipe PDFs in one go, or
 * Run `make makefiles` in the root directory to populate the recipe directories with symlinks to the recipe makefile
 * Navigate to the directory containing the recipe that you want to build and run `make`
 * `make clean` will delete the temporary files but not the recipe.pdf, and `make allclean` will delete everything that `make` made
+
+## Adding a new recipe
+To take the manual effort out of running `mkdir` and remembering the filenames, instead run `./newrecipe.sh mains/pie` from the root directory.
+The argument "mains/pie" is the category of food and the name of the food.
+Then simply edit the created txt files and run the above build process.
