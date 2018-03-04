@@ -1,6 +1,6 @@
 # List the directories corresponding to the categories of food and wildcard
 # over the food within each category
-SUBDIRS := $(wildcard mains/*/)
+SUBDIRS := $(wildcard mains/*/ desserts/*/)
 # Each food directory should have its own symlink to the recipeMakefile
 MAKEFILES := $(SUBDIRS:=Makefile)
 
