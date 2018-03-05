@@ -32,7 +32,6 @@ TEMPLATE="$5"
 	echo "d"
 	echo "-a"
 	while read -r LINE ; do
-		echo "${LINE}" >&2
 		echo "\item $LINE"
 	done < $INGREDIENTS
 	# we have finished writing the ingredients
