@@ -1,6 +1,7 @@
 # recipes
 A collection of delicious recipes
 
+Main repository is hosted at https://git.dyoung.tech/sciguy16/recipes but as long as the auto-deploy hooks work properly then https://github.com/sciguy16/recipes should always be up to date.
 
 ## Structure of this repository
 Each recipe is broadly classified into either `main` or `dessert`, and then in an appropriately named directory.
