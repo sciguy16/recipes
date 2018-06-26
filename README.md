@@ -14,7 +14,7 @@ The recipe directory contains three files:
 
 ## How to use/build
 
-Your system must have access to `pdflatex` and GNU Make.
+Your system must have access to `pdflatex`, GNU Make (other makes probably work too), and the mighty ed text editor.
 There are two supported use cases: building all of the recipe PDFs in one go, or building them individually.
 
 ### Build all at once
